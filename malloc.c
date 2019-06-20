@@ -74,4 +74,15 @@ int microcrt_heap_init(){
   void *base = NULL;
   heap_header *header = NULL;
   unsigned heap_size = 1024*1024*64;
+
+  header = (heap_header *)base;
+  header->size = heap_size;
+  header->next = NULL;
+  header->prev = NULL;
+
+  list_head = header;
+  return 1;
 }
+
+
+
